@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kokotoa/src/views/components/display.dart';
 
 
 
@@ -60,7 +61,7 @@ class _CalculatorHomePage extends State<CalculatorHomePage> {
         child: Column(
          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
+            Display(value: _output, height: displayHeight,)
           ],
         ),
       ),
