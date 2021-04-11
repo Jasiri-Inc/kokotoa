@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kokotoa/src/views/components/display.dart';
+import 'package:kokotoa/src/views/components/key_pad.dart';
 
 
 
@@ -61,15 +62,12 @@ class _CalculatorHomePage extends State<CalculatorHomePage> {
         child: Column(
          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Display(value: _output, height: displayHeight,)
+            Display(value: _output, height: displayHeight,),
+            KeyPad(),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => (print('yes')),
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

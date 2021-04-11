@@ -23,13 +23,4 @@ class KeySymbol {
 
   KeyType get type => isFunction ? KeyType.FUNCTION : (isOperator ? KeyType.OPERATOR : KeyType.INTEGER);
 
-
-
-
-
-  // bool get isOperator => _operator.contains(this);
-
-
-
-
 }
