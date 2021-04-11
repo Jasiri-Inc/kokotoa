@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kokotoa/src/controllers/key_controller.dart';
+import 'package:kokotoa/src/controllers/processor.dart';
 import 'package:kokotoa/src/views/components/display.dart';
 import 'package:kokotoa/src/views/components/key_pad.dart';
-
 
 
 class CalculatorHomePage extends StatefulWidget {
@@ -26,13 +27,18 @@ class _CalculatorHomePage extends State<CalculatorHomePage> {
   @override
   void initState() {
 
+    KeyController.listen((event) => Processor.process(event));
+    Processor.listen((data) => setState(() { _output = data; }));
+    Processor.refresh();
     super.initState();
+
   }
 
   @override
   void dispose() {
 
-
+    KeyController.dispose();
+    Processor.dispose();
     super.dispose();
   }
 

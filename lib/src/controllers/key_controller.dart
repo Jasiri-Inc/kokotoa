@@ -21,5 +21,4 @@ abstract class KeyController {
   static void fire(KeyEvent event) => _controller.add(event);
 
   static dispose() => _controller.close();
-
 }

@@ -46,15 +46,19 @@ class CalculatorKey extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     double size = MediaQuery.of(context).size.width / 4;
     TextStyle style =
-        Theme.of(context).textTheme.display1.copyWith(color: Colors.white);
+        Theme.of(context).textTheme.headline4.copyWith(color: Colors.white);
 
     return Container(
+
         width: (symbol == Keys.zero) ? (size * 2) : size,
         padding: EdgeInsets.all(2),
         height: size,
         child: ElevatedButton(
+
+
           // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
           // color: color,
           // elevation: 4,
