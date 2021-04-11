@@ -6,7 +6,7 @@ class KeySymbol {
 
 
   final String value;
-  const KeySymbol({this.value});
+  const KeySymbol(this.value);
 
 
   @override
