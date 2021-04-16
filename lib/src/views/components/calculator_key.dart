@@ -46,24 +46,24 @@ class CalculatorKey extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     double size = MediaQuery.of(context).size.width / 4;
-    TextStyle style =
+    TextStyle textStyle =
         Theme.of(context).textTheme.headline4.copyWith(color: Colors.white);
 
+    ButtonStyle buttonStyle;
+
     return Container(
-
-        width: (symbol == Keys.zero) ? (size * 2) : size,
-        padding: EdgeInsets.all(2),
-        height: size,
-        child: ElevatedButton(
-
-
-          // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-          // color: color,
-          // elevation: 4,
-          child: Text(symbol.value, style: style),
-          onPressed: () => _fire(this),
-        ));
+      width: (symbol == Keys.zero) ? (size * 2) : size,
+      padding: EdgeInsets.all(2),
+      height: size,
+      child: ElevatedButton(
+        // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+        // color: color,
+        // elevation: 4,
+        style: buttonStyle,
+        child: Text(symbol.value, style: textStyle),
+        onPressed: () => _fire(this),
+      ),
+    );
   }
 }

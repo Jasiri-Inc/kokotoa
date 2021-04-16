@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Display extends StatelessWidget {
+
   final String value;
   final double height;
 
@@ -22,7 +23,7 @@ class Display extends StatelessWidget {
         .of(context)
         .textTheme
         .headline3
-        .copyWith(color: Colors.white, fontWeight: FontWeight.w200);
+        .copyWith(color: Colors.white, fontWeight: FontWeight.w600);
 
 
     return Container(

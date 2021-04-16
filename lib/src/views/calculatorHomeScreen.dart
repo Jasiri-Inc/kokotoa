@@ -7,12 +7,9 @@ import 'package:kokotoa/src/views/components/key_pad.dart';
 
 class CalculatorHomePage extends StatefulWidget {
 
-  CalculatorHomePage({Key key, this.title}) : super(key: key);
-
-
-
   final String title;
 
+  CalculatorHomePage({Key key, this.title}) : super(key: key);
 
   @override
   _CalculatorHomePage createState() => _CalculatorHomePage();
@@ -21,8 +18,8 @@ class CalculatorHomePage extends StatefulWidget {
 
 class _CalculatorHomePage extends State<CalculatorHomePage> {
 
-
   String _output;
+
 
   @override
   void initState() {
@@ -62,6 +59,7 @@ class _CalculatorHomePage extends State<CalculatorHomePage> {
       appBar: AppBar(
 
         title: Text(widget.title),
+
       ),
       body: Center(
 
