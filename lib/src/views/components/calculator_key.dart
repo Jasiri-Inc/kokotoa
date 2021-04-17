@@ -31,17 +31,28 @@ class CalculatorKey extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     double size = MediaQuery.of(context).size.width / 4;
-    TextStyle textStyle = Theme.of(context).textTheme.headline4.copyWith();
+    TextStyle textStyle = Theme.of(context).textTheme.headline3.copyWith();
 
     return GestureDetector(
-      onTap: (){},
+      onTap: () {},
       child: Container(
-        padding: EdgeInsets.all(2),
-        margin: EdgeInsets.all(2),
+        padding: EdgeInsets.all(20),
+        margin: EdgeInsets.all(20),
         width: size,
-        child: Text(symbol.value, style: textStyle,),
+        height: 100,
+        decoration: BoxDecoration(
+          border: Border.all(
+            width: 3,
+            color: const Color.fromRGBO(38, 38, 52, 1.0),
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(25.0))
+        ),
+        child: Text(
+          symbol.value,
+          style: textStyle,
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
