@@ -38,6 +38,18 @@ class _HomeScreenState extends State<HomeScreen> {
           opacity: 10.0,
         ),
       ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text('data'),
+          Expanded(
+            child: FittedBox(
+              fit: BoxFit.contain, // otherwise the logo will be tiny
+              child: const FlutterLogo(),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
