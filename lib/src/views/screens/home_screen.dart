@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kokotoa/src/views/components/display.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -8,6 +9,18 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
+    //To get Height of safe Are for iOS 11.
+    var padding = MediaQuery.of(context).padding;
+    double newHeight = height - padding.top - padding.bottom;
+
+    
+
+
+
     return Scaffold(
       backgroundColor: Colors.blue,
       appBar: AppBar(
@@ -41,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text('data'),
+         Display(),
           Expanded(
             child: FittedBox(
               fit: BoxFit.contain, // otherwise the logo will be tiny
