@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import './views/calculatorHomeScreen.dart';
+import './views/screens/home_screen.dart';
 
 
 class CalculatorApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    WidgetsFlutterBinding.ensureInitialized();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -17,9 +18,11 @@ class CalculatorApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Calculator Demo App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepOrange,
+        primaryColor: Colors.blue,
+
       ),
-      home: CalculatorHomePage(title: 'calculator'),
+      home: HomeScreen(),
     );
   }
 }
