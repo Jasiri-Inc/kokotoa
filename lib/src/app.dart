@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 
 import './views/screens/home_screen.dart';
 
-
 class CalculatorApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -18,10 +17,14 @@ class CalculatorApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Calculator Demo App',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
-        primaryColor: Colors.blue,
-
-      ),
+          primarySwatch: Colors.deepOrange,
+          primaryColor: const Color.fromRGBO(235, 234, 234, 1.0),
+          brightness: Brightness.light,
+          accentColor: const Color.fromRGBO(253, 134, 56, 1.0),
+          fontFamily: '',
+          textTheme: TextTheme(
+            headline3: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
+          )),
       home: HomeScreen(),
     );
   }
