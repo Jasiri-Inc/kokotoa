@@ -51,7 +51,10 @@ class KeyPad extends StatelessWidget {
             ),
             Column(
               children: <Widget>[
-                CalculatorKey(symbol: Keys.clear),
+               SizedBox(
+                 height: 280,
+                 child:  CalculatorKey(symbol: Keys.clear),
+               )
               ],
             ),
           ],

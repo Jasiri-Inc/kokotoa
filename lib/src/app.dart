@@ -24,6 +24,7 @@ class CalculatorApp extends StatelessWidget {
           fontFamily: '',
           textTheme: TextTheme(
             headline3: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
+            headline6: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, letterSpacing: 0.0),
           )),
       home: HomeScreen(),
     );
