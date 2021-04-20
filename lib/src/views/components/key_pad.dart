@@ -9,24 +9,24 @@ class KeyPad extends StatelessWidget {
           children: <Widget>[
             CalculatorKey(symbol: Keys.clear),
             CalculatorKey(symbol: Keys.sign),
-            CalculatorKey(symbol: Keys.percent),
             CalculatorKey(symbol: Keys.divide),
+            CalculatorKey(symbol: Keys.multiply),
           ],
         ),
         Row(
           children: <Widget>[
-            CalculatorKey(symbol: Keys.clear),
-            CalculatorKey(symbol: Keys.sign),
-            CalculatorKey(symbol: Keys.percent),
-            CalculatorKey(symbol: Keys.divide),
+            CalculatorKey(symbol: Keys.seven),
+            CalculatorKey(symbol: Keys.eight),
+            CalculatorKey(symbol: Keys.nine),
+            CalculatorKey(symbol: Keys.subtract),
           ],
         ),
         Row(
           children: <Widget>[
-            CalculatorKey(symbol: Keys.clear),
-            CalculatorKey(symbol: Keys.sign),
-            CalculatorKey(symbol: Keys.percent),
-            CalculatorKey(symbol: Keys.divide),
+            CalculatorKey(symbol: Keys.four),
+            CalculatorKey(symbol: Keys.five),
+            CalculatorKey(symbol: Keys.six),
+            CalculatorKey(symbol: Keys.add),
           ],
         ),
         Row(
@@ -35,15 +35,15 @@ class KeyPad extends StatelessWidget {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    CalculatorKey(symbol: Keys.clear),
-                    CalculatorKey(symbol: Keys.sign),
-                    CalculatorKey(symbol: Keys.percent),
+                    CalculatorKey(symbol: Keys.three),
+                    CalculatorKey(symbol: Keys.two),
+                    CalculatorKey(symbol: Keys.one),
                   ],
                 ),
                 Row(
                   children: <Widget>[
                     CalculatorKey(symbol: Keys.clear),
-                    CalculatorKey(symbol: Keys.sign),
+                    CalculatorKey(symbol: Keys.zero),
                     CalculatorKey(symbol: Keys.percent),
                   ],
                 )
@@ -53,7 +53,7 @@ class KeyPad extends StatelessWidget {
               children: <Widget>[
                SizedBox(
                  height: 280,
-                 child:  CalculatorKey(symbol: Keys.clear),
+                 child:  CalculatorKey(symbol: Keys.equals),
                )
               ],
             ),

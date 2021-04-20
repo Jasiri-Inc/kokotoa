@@ -23,8 +23,14 @@ class CalculatorApp extends StatelessWidget {
           accentColor: const Color.fromRGBO(253, 134, 56, 1.0),
           fontFamily: '',
           textTheme: TextTheme(
-            headline3: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
-            headline6: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, letterSpacing: 0.0),
+            headline3: TextStyle(
+                fontSize: 40.0,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromRGBO(253, 134, 56, 1.0)),
+            headline6: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0.0),
           )),
       home: HomeScreen(),
     );

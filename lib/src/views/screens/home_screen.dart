@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kokotoa/src/views/components/display.dart';
+import 'package:kokotoa/src/views/components/key_pad.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -17,22 +18,26 @@ class _HomeScreenState extends State<HomeScreen> {
     var padding = MediaQuery.of(context).padding;
     double newHeight = height - padding.top - padding.bottom;
 
-    
-
-
-
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: const Color.fromRGBO(235, 234, 234, 1.0),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
           'calculator',
+          style: TextStyle(
+            color: const Color.fromRGBO(0, 0, 0, 1.0),
+            fontSize: 25.0,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         leading: GestureDetector(
           onTap: () {
             print('Clicked');
           },
-          child: Icon(Icons.menu),
+          child: Icon(
+            Icons.menu,
+            color: const Color.fromRGBO(253, 134, 56, 1.0),
+          ),
         ),
         actions: <Widget>[
           Padding(
@@ -47,18 +52,18 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         actionsIconTheme: IconThemeData(
           size: 30.0,
-          color: Colors.deepOrange,
+          color: const Color.fromRGBO(253, 134, 56, 1.0),
           opacity: 10.0,
         ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-         Display(),
+          Display(),
           Expanded(
             child: FittedBox(
               fit: BoxFit.contain, // otherwise the logo will be tiny
-              child: const FlutterLogo(),
+              child: KeyPad(),
             ),
           ),
         ],
