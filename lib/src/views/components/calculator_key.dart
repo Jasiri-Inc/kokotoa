@@ -32,13 +32,14 @@ class CalculatorKey extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width / 4;
+    double height = MediaQuery.of(context).size.height / 5;
     TextStyle textStyle = Theme.of(context).textTheme.headline3.copyWith(color: const Color.fromRGBO(253, 134, 56, 1.0));
 
     return GestureDetector(
       onTap: () {},
       child: Container(
         padding: EdgeInsets.all(20),
-        margin: EdgeInsets.all(20),
+        margin: EdgeInsets.all(10),
         width: size,
         height: 100,
         decoration: BoxDecoration(

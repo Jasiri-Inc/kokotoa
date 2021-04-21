@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Display(),
           Expanded(
             child: FittedBox(
-              fit: BoxFit.contain, // otherwise the logo will be tiny
+              fit: BoxFit.cover, // otherwise the logo will be tiny
               child: KeyPad(),
             ),
           ),

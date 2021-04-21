@@ -8,12 +8,13 @@ class Display extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double size = MediaQuery.of(context).size.width;
     TextStyle textStyle = Theme.of(context).textTheme.headline3.copyWith();
 
     return Container(
-      width: 381,
+      width: size,
       height: 209,
-      margin: const EdgeInsets.all(30.0),
+      margin: const EdgeInsets.all(20.0),
       padding: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         border: Border.all(
