@@ -9,7 +9,8 @@ class Display extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
-    TextStyle textStyle = Theme.of(context).textTheme.headline3.copyWith();
+    TextStyle textStyle1 = Theme.of(context).textTheme.headline3.copyWith(fontSize: 20);
+    TextStyle textStyle2 = Theme.of(context).textTheme.headline3.copyWith();
 
     return Container(
       width: size,
@@ -32,8 +33,8 @@ class Display extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               Text(
-                'data',
-                style: textStyle,
+                '15 × 200',
+                style: textStyle1,
               ),
             ],
           ),
@@ -41,8 +42,8 @@ class Display extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               Text(
-                'data',
-                style: textStyle,
+                '3000',
+                style: textStyle2,
               ),
             ],
           ),

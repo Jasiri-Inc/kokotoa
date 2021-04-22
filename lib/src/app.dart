@@ -21,10 +21,10 @@ class CalculatorApp extends StatelessWidget {
           primaryColor: const Color.fromRGBO(235, 234, 234, 1.0),
           brightness: Brightness.light,
           accentColor: const Color.fromRGBO(253, 134, 56, 1.0),
-          fontFamily: '',
+          fontFamily: 'Inter',
           textTheme: TextTheme(
             headline3: TextStyle(
-                fontSize: 40.0,
+                // fontSize: 40.0,
                 fontWeight: FontWeight.bold,
                 color: const Color.fromRGBO(253, 134, 56, 1.0)),
             headline6: TextStyle(
