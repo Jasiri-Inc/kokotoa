@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kokotoa/src/views/components/display.dart';
 import 'package:kokotoa/src/views/components/key_pad.dart';
 
+// ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
   Function changeCurrentTheme;
 
@@ -14,13 +15,13 @@ class HomeScreen extends StatelessWidget {
     TextStyle textStyle = Theme.of(context).textTheme.headline3.copyWith(
           fontSize: 25.0,
         );
-
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-
-    //To get Height of safe Are for iOS 11.
-    var padding = MediaQuery.of(context).padding;
-    double newHeight = height - padding.top - padding.bottom;
+    //
+    // double width = MediaQuery.of(context).size.width;
+    // double height = MediaQuery.of(context).size.height;
+    //
+    // //To get Height of safe Are for iOS 11.
+    // var padding = MediaQuery.of(context).padding;
+    // double newHeight = height - padding.top - padding.bottom;
 
     return Scaffold(
       appBar: AppBar(
