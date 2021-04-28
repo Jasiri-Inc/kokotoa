@@ -9,8 +9,13 @@ class Display extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
-    TextStyle textStyle1 = Theme.of(context).textTheme.headline3.copyWith(fontSize: 20);
-    TextStyle textStyle2 = Theme.of(context).textTheme.headline3.copyWith();
+    TextStyle textStyle1 = Theme.of(context).textTheme.headline3.copyWith(
+          fontSize: 20,
+          color: const Color.fromRGBO(253, 134, 56, 1.0),
+        );
+    TextStyle textStyle2 = Theme.of(context).textTheme.headline3.copyWith(
+          color: const Color.fromRGBO(253, 134, 56, 1.0),
+        );
 
     return Container(
       width: size,
