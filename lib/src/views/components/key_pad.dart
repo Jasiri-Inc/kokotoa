@@ -44,7 +44,7 @@ class KeyPad extends StatelessWidget {
                   children: <Widget>[
                     CalculatorKey(symbol: Keys.clear),
                     CalculatorKey(symbol: Keys.zero),
-                    CalculatorKey(symbol: Keys.percent),
+                    CalculatorKey(symbol: Keys.decimal),
                   ],
                 )
               ],
