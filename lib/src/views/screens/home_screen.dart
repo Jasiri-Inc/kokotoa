@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:kokotoa/src/views/components/display.dart';
 import 'package:kokotoa/src/views/components/key_pad.dart';
 
+class HomeScreen extends StatelessWidget {
+  Function changeCurrentTheme;
 
-class HomeScreen extends StatefulWidget {
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-
+  HomeScreen(Function changeCurrentTheme){
+    this.changeCurrentTheme = changeCurrentTheme;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +18,6 @@ class _HomeScreenState extends State<HomeScreen> {
     //To get Height of safe Are for iOS 11.
     var padding = MediaQuery.of(context).padding;
     double newHeight = height - padding.top - padding.bottom;
-
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(235, 234, 234, 1.0),
@@ -45,11 +42,12 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+               changeCurrentTheme();
+              },
               child: Icon(Icons.ac_unit_sharp),
             ),
           ),
-
         ],
         actionsIconTheme: IconThemeData(
           size: 30.0,
