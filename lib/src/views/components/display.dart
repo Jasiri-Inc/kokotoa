@@ -1,21 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:kokotoa/src/models/key_controller.dart';
+import 'package:kokotoa/src/models/processor.dart';
 
-class Display extends StatelessWidget {
-  final String value;
-  final double height;
+class Display extends StatefulWidget {
+  @override
+  _DisplayState createState() => _DisplayState();
+}
 
-  Display({Key key, this.height, this.value}) : super(key: key);
+class _DisplayState extends State<Display> {
+
+
+  String _output = '';
+
+  @override
+  void initState() {
+
+    KeyController.listen((event) => Processor.process(event));
+    Processor.listen((data) => setState(() { _output = data; }));
+    Processor.refresh();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+
+    KeyController.dispose();
+    Processor.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+
     double size = MediaQuery.of(context).size.width;
     TextStyle textStyle1 = Theme.of(context).textTheme.headline3.copyWith(
-          fontSize: 20,
-          color: const Color.fromRGBO(253, 134, 56, 1.0),
-        );
+      fontSize: 20,
+      color: const Color.fromRGBO(253, 134, 56, 1.0),
+    );
     TextStyle textStyle2 = Theme.of(context).textTheme.headline3.copyWith(
-          color: const Color.fromRGBO(253, 134, 56, 1.0),
-        );
+      color: const Color.fromRGBO(253, 134, 56, 1.0),
+    );
 
     return Container(
       width: size,
@@ -47,7 +71,7 @@ class Display extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               Text(
-                '3000',
+                _output,
                 style: textStyle2,
               ),
             ],

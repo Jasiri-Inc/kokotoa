@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kokotoa/src/views/components/key_symbol.dart';
+import 'package:kokotoa/src/models/key_controller.dart';
+
 
 abstract class Keys {
   static KeySymbol clear = const KeySymbol('C');
@@ -29,6 +31,8 @@ class CalculatorKey extends StatelessWidget {
 
   final KeySymbol symbol;
 
+  static dynamic _fire(CalculatorKey key) => KeyController.fire(KeyEvent(key));
+
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width / 4;
@@ -36,7 +40,7 @@ class CalculatorKey extends StatelessWidget {
     TextStyle textStyle = Theme.of(context).textTheme.headline3.copyWith(color: const Color.fromRGBO(253, 134, 56, 1.0));
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => _fire(this),
       child: Container(
         padding: EdgeInsets.all(20),
         margin: EdgeInsets.all(10),
