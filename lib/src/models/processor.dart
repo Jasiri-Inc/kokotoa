@@ -6,31 +6,31 @@ import 'package:kokotoa/src/views/components/key_symbol.dart';
 
 abstract class Processor {
 
-  static KeySymbol _operator;
-  static String _valA = '0';
-  static String _valB = '0';
-  static String _result;
+  static KeySymbol? _operator;
+  static String? _valA = '0';
+  static String? _valB = '0';
+  static String? _result;
 
   static StreamController _controller = StreamController();
   static Stream get _stream => _controller.stream;
 
-  static StreamSubscription listen(Function handler) => _stream.listen(handler);
-  static void refresh() => _fire(_output);
+  static StreamSubscription listen(Function handler) => _stream.listen(handler as dynamic);
+  static void refresh() => _fire(_output!);
 
   static void _fire(String data) => _controller.add(_output);
 
-  static String get _output => _result == null ? _equation : _result;
+  static String? get _output => _result == null ? _equation : _result;
 
-  static String get _equation => _valA
-      + (_operator != null ? ' ' + _operator.value : '')
-      + (_valB != '0' ? ' ' + _valB : '');
+  static String? get _equation => _valA!
+      + (_operator != null ? ' ' + _operator!.value : '')
+      + (_valB != '0' ? ' ' + _valB! : '');
 
   static dispose() => _controller.close();
 
   static process(dynamic event) {
 
     CalculatorKey key = (event as KeyEvent).key;
-    switch(key.symbol.type) {
+    switch(key.symbol!.type) {
 
       case KeyType.FUNCTION:
         return handleFunction(key);
@@ -71,9 +71,9 @@ abstract class Processor {
 
   static void handleInteger(CalculatorKey key) {
 
-    String val = key.symbol.value;
-    if (_operator == null) { _valA = (_valA == '0') ? val : _valA + val; }
-    else { _valB = (_valB == '0') ? val : _valB + val; }
+    String val = key.symbol!.value;
+    if (_operator == null) { _valA = (_valA == '0') ? val : _valA! + val; }
+    else { _valB = (_valB == '0') ? val : _valB! + val; }
     refresh();
   }
 
@@ -85,22 +85,22 @@ abstract class Processor {
 
   static void _sign() {
 
-    if (_valB != '0') { _valB = (_valB.contains('-') ? _valB.substring(1) : '-' + _valB); }
-    else if (_valA != '0') { _valA = (_valA.contains('-') ? _valA.substring(1) : '-' + _valA); }
+    if (_valB != '0') { _valB = (_valB!.contains('-') ? _valB!.substring(1) : '-' + _valB!); }
+    else if (_valA != '0') { _valA = (_valA!.contains('-') ? _valA!.substring(1) : '-' + _valA!); }
   }
 
   static String calcPercent(String x) => (double.parse(x) / 100).toString();
 
   static void _percent() {
 
-    if (_valB != '0' && !_valB.contains('.')) { _valB = calcPercent(_valB); }
-    else if (_valA != '0' && !_valA.contains('.')) { _valA = calcPercent(_valA); }
+    if (_valB != '0' && !_valB!.contains('.')) { _valB = calcPercent(_valB!); }
+    else if (_valA != '0' && !_valA!.contains('.')) { _valA = calcPercent(_valA!); }
   }
 
   static void _decimal() {
 
-    if (_valB != '0' && !_valB.contains('.')) { _valB = _valB + '.'; }
-    else if (_valA != '0' && !_valA.contains('.')) { _valA = _valA + '.'; }
+    if (_valB != '0' && !_valB!.contains('.')) { _valB = _valB! + '.'; }
+    else if (_valA != '0' && !_valA!.contains('.')) { _valA = _valA! + '.'; }
   }
 
   static void _calculate() {
@@ -114,7 +114,7 @@ abstract class Processor {
       Keys.add: (a, b) => (a + b)
     };
 
-    double result = table[_operator](double.parse(_valA), double.parse(_valB));
+    double result = table[_operator](double.parse(_valA!), double.parse(_valB!));
     String str = result.toString();
 
     while ((str.contains('.') && str.endsWith('0')) || str.endsWith('.')) {
