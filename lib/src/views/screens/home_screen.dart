@@ -4,7 +4,7 @@ import 'package:kokotoa/src/views/components/key_pad.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
-  Function changeCurrentTheme;
+  Function? changeCurrentTheme;
 
   HomeScreen(Function changeCurrentTheme) {
     this.changeCurrentTheme = changeCurrentTheme;
@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = Theme.of(context).textTheme.headline3.copyWith(
+    TextStyle textStyle = Theme.of(context).textTheme.headline3!.copyWith(
           fontSize: 25.0,
         );
 
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
             padding: EdgeInsets.only(right: 20.0),
             child: GestureDetector(
               onTap: () {
-                changeCurrentTheme();
+                changeCurrentTheme!();
               },
               child: Icon(Icons.ac_unit_sharp),
             ),

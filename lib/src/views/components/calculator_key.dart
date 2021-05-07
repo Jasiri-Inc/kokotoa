@@ -29,7 +29,7 @@ abstract class Keys {
 class CalculatorKey extends StatelessWidget {
   CalculatorKey({this.symbol});
 
-  final KeySymbol symbol;
+  final KeySymbol ?symbol;
 
   static dynamic _fire(CalculatorKey key) => KeyController.fire(KeyEvent(key));
 
@@ -37,7 +37,7 @@ class CalculatorKey extends StatelessWidget {
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width / 4;
     // double height = MediaQuery.of(context).size.height / 5;
-    TextStyle textStyle = Theme.of(context).textTheme.headline3.copyWith(color: const Color.fromRGBO(253, 134, 56, 1.0));
+    TextStyle textStyle = Theme.of(context).textTheme.headline3!.copyWith(color: const Color.fromRGBO(253, 134, 56, 1.0));
 
     return GestureDetector(
       onTap: () => _fire(this),
@@ -54,7 +54,7 @@ class CalculatorKey extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(25.0))
         ),
         child: Text(
-          symbol.value,
+          symbol!.value,
           style: textStyle,
           textAlign: TextAlign.center,
         ),

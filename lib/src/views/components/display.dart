@@ -33,11 +33,11 @@ class _DisplayState extends State<Display> {
   Widget build(BuildContext context) {
 
     double size = MediaQuery.of(context).size.width;
-    TextStyle textStyle1 = Theme.of(context).textTheme.headline3.copyWith(
+    TextStyle textStyle1 = Theme.of(context).textTheme.headline3!.copyWith(
       fontSize: 20,
       color: const Color.fromRGBO(253, 134, 56, 1.0),
     );
-    TextStyle textStyle2 = Theme.of(context).textTheme.headline3.copyWith(
+    TextStyle textStyle2 = Theme.of(context).textTheme.headline3!.copyWith(
       color: const Color.fromRGBO(253, 134, 56, 1.0),
     );
 
