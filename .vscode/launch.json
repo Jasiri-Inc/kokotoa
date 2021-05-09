@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "kokotoa",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "android-x86",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "emulator-5554"
+        },
+        {
+            "name": "ios",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "90C4D651-1C9E-4D61-8094-99CB68F47AE4"
+        },
+    ],
+    "compounds": [
+        {
+            "name": "All Devices",
+            "configurations": [
+                "android-x86",
+                "ios",
+            ]
+        }
+    ]
+}
