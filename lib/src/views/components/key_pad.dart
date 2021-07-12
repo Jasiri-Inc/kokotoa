@@ -52,7 +52,7 @@ class KeyPad extends StatelessWidget {
             Column(
               children: <Widget>[
                SizedBox(
-                 height: 280,
+                 height:( MediaQuery.of(context).size.height/4 + 40),
                  child:  CalculatorKey(symbol: Keys.equals),
                )
               ],

@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
           Display(),
           Expanded(
             child: FittedBox(
-              fit: BoxFit.fitWidth, // otherwise the logo will be tiny
+              fit: BoxFit.contain, // otherwise the logo will be tiny
               child: KeyPad(),
             ),
           ),

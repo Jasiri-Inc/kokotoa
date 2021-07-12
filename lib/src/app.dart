@@ -24,9 +24,10 @@ class _CalculatorAppState extends State<CalculatorApp> {
     // fontFamily: 'Inter',
     textTheme: TextTheme(
       headline3: TextStyle(
-          fontSize: 40.0,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,),
+        fontSize: 40.0,
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+      ),
       headline6: TextStyle(
           fontSize: 20.0, fontWeight: FontWeight.bold, letterSpacing: 0.0),
     ),
